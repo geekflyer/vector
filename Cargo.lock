@@ -954,7 +954,7 @@ dependencies = [
  "quickcheck",
  "scan_fmt",
  "tempfile",
- "tokio 0.2.13",
+ "tokio 0.2.20",
  "tracing",
  "winapi 0.3.8",
 ]
@@ -1301,7 +1301,7 @@ dependencies = [
  "indexmap",
  "log",
  "slab",
- "tokio 0.2.13",
+ "tokio 0.2.20",
  "tokio-util",
 ]
 
@@ -1528,7 +1528,7 @@ dependencies = [
  "net2",
  "pin-project",
  "time",
- "tokio 0.2.13",
+ "tokio 0.2.20",
  "tower-service 0.3.0",
  "want 0.3.0",
 ]
@@ -1565,7 +1565,7 @@ dependencies = [
  "once_cell",
  "openssl",
  "openssl-sys",
- "tokio 0.2.13",
+ "tokio 0.2.20",
  "tokio-openssl 0.4.0",
 ]
 
@@ -2020,7 +2020,7 @@ checksum = "f3fc63816bd5f8bde5eb31ce471f9633adc69ba1c55b44191b4d5fc7e263e8ab"
 dependencies = [
  "log",
  "metrics-core",
- "tokio 0.2.13",
+ "tokio 0.2.20",
 ]
 
 [[package]]
@@ -4038,9 +4038,9 @@ dependencies = [
 
 [[package]]
 name = "tokio"
-version = "0.2.13"
+version = "0.2.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0fa5e81d6bc4e67fe889d5783bd2a128ab2e0cfa487e0be16b6a8d177b101616"
+checksum = "05c1d570eb1a36f0345a5ce9c6c6e665b70b73d11236912c0b477616aeec47b1"
 dependencies = [
  "bytes 0.5.4",
  "fnv",
@@ -4087,7 +4087,7 @@ dependencies = [
  "futures-core",
  "futures-util",
  "pin-project-lite",
- "tokio 0.2.13",
+ "tokio 0.2.20",
  "tokio-current-thread",
  "tokio-executor",
  "tokio-reactor",
@@ -4165,7 +4165,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3c4b08c5f4208e699ede3df2520aca2e82401b2de33f45e96696a074480be594"
 dependencies = [
  "openssl",
- "tokio 0.2.13",
+ "tokio 0.2.20",
 ]
 
 [[package]]
@@ -4266,7 +4266,7 @@ checksum = "ed0049c119b6d505c4447f5c64873636c7af6c75ab0d45fd9f618d82acb8016d"
 dependencies = [
  "bytes 0.5.4",
  "futures-core",
- "tokio 0.2.13",
+ "tokio 0.2.20",
 ]
 
 [[package]]
@@ -4342,7 +4342,7 @@ dependencies = [
  "futures-sink",
  "log",
  "pin-project-lite",
- "tokio 0.2.13",
+ "tokio 0.2.20",
 ]
 
 [[package]]
@@ -4400,7 +4400,7 @@ dependencies = [
  "futures-core",
  "futures-util",
  "pin-project",
- "tokio 0.2.13",
+ "tokio 0.2.20",
  "tower-layer 0.3.0",
  "tower-service 0.3.0",
  "tracing",
@@ -4517,7 +4517,7 @@ checksum = "9ba4bbc2c1e4a8543c30d4c13a4c8314ed72d6e07581910f665aa13fde0153c8"
 dependencies = [
  "futures-util",
  "pin-project",
- "tokio 0.2.13",
+ "tokio 0.2.20",
  "tokio-test",
  "tower-layer 0.3.0",
  "tower-service 0.3.0",
@@ -4969,6 +4969,7 @@ dependencies = [
  "flate2",
  "futures 0.1.29",
  "futures 0.3.4",
+ "futures-core",
  "getset",
  "glob 0.2.11",
  "goauth",
@@ -5007,6 +5008,7 @@ dependencies = [
  "openssl",
  "openssl-probe",
  "owning_ref",
+ "pin-project",
  "pretty_assertions",
  "prost",
  "prost-build",
@@ -5044,7 +5046,7 @@ dependencies = [
  "task-compat",
  "tempfile",
  "tokio 0.1.22",
- "tokio 0.2.13",
+ "tokio 0.2.20",
  "tokio-codec",
  "tokio-compat",
  "tokio-openssl 0.3.0",
@@ -5056,6 +5058,8 @@ dependencies = [
  "toml 0.4.10",
  "tower 0.1.1",
  "tower 0.3.1",
+ "tower-layer 0.3.0",
+ "tower-service 0.3.0",
  "tower-test 0.1.0",
  "tower-test 0.3.0",
  "tracing",
