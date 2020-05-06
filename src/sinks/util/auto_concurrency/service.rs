@@ -91,30 +91,6 @@ where
     }
 }
 
-#[cfg(feature = "load")]
-impl<S> crate::load::Load for AutoConcurrencyLimit<S>
-where
-    S: crate::load::Load,
-{
-    type Metric = S::Metric;
-    fn load(&self) -> Self::Metric {
-        self.inner.load()
-    }
-}
-
-impl<S> Clone for AutoConcurrencyLimit<S>
-where
-    S: Clone,
-{
-    fn clone(&self) -> AutoConcurrencyLimit<S> {
-        AutoConcurrencyLimit {
-            inner: self.inner.clone(),
-            semaphore: self.semaphore.clone(),
-            state: State::Empty,
-        }
-    }
-}
-
 impl fmt::Debug for State {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
