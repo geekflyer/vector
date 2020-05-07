@@ -12,7 +12,7 @@ use tokio::sync::OwnedSemaphorePermit;
 /// Future for the `ConcurrencyLimit` service.
 #[pin_project]
 #[derive(Debug)]
-pub struct ResponseFuture<T> {
+pub(crate) struct ResponseFuture<T> {
     #[pin]
     inner: T,
     // Keep this around so that it is dropped when the future completes
@@ -20,7 +20,7 @@ pub struct ResponseFuture<T> {
 }
 
 impl<T> ResponseFuture<T> {
-    pub(crate) fn new(inner: T, _permit: OwnedSemaphorePermit) -> ResponseFuture<T> {
+    pub(super) fn new(inner: T, _permit: OwnedSemaphorePermit) -> ResponseFuture<T> {
         ResponseFuture { inner, _permit }
     }
 }

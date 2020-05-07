@@ -4,4 +4,4 @@ pub mod future;
 mod layer;
 mod service;
 
-pub use self::{layer::AutoConcurrencyLimitLayer, service::AutoConcurrencyLimit};
+pub(crate) use self::{layer::AutoConcurrencyLimitLayer, service::AutoConcurrencyLimit};

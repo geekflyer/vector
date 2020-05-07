@@ -14,7 +14,7 @@ use tokio::sync::{OwnedSemaphorePermit, Semaphore};
 /// Enforces a limit on the concurrent number of requests the underlying
 /// service can handle.
 #[derive(Debug)]
-pub struct AutoConcurrencyLimit<T> {
+pub(crate) struct AutoConcurrencyLimit<T> {
     inner: T,
     semaphore: Arc<Semaphore>,
     state: State,
@@ -28,28 +28,12 @@ enum State {
 
 impl<T> AutoConcurrencyLimit<T> {
     /// Create a new concurrency limiter.
-    pub fn new(inner: T, max: usize) -> Self {
-        let semaphore = Arc::new(Semaphore::new(max));
+    pub(crate) fn new(inner: T, max: usize) -> Self {
         AutoConcurrencyLimit {
             inner,
-            semaphore,
+            semaphore: Arc::new(Semaphore::new(max)),
             state: State::Empty,
         }
-    }
-
-    /// Get a reference to the inner service
-    pub fn get_ref(&self) -> &T {
-        &self.inner
-    }
-
-    /// Get a mutable reference to the inner service
-    pub fn get_mut(&mut self) -> &mut T {
-        &mut self.inner
-    }
-
-    /// Consume `self`, returning the inner service
-    pub fn into_inner(self) -> T {
-        self.inner
     }
 }
 
